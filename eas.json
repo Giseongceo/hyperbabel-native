@@ -1,0 +1,16 @@
+{
+  "cli": {
+    "version": ">= 10.2.2"
+  },
+  "build": {
+    "preview": {
+      "android": {
+        "buildType": "apk"
+      },
+      "ios": {
+        "simulator": true
+      }
+    },
+    "production": {}
+  }
+}
