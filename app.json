@@ -38,11 +38,42 @@
             "backgroundColor": "#000000"
           }
         }
+      ],
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "Allow HyperBabel to access your camera for global video calls.",
+          "microphonePermission": "Allow HyperBabel to access your microphone for real-time translation."
+        }
+      ],
+      [
+        "expo-av",
+        {
+          "microphonePermission": "Allow HyperBabel to access your microphone for real-time translation."
+        }
+      ],
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 24,
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34
+          },
+          "ios": {
+            "deploymentTarget": "15.1"
+          }
+        }
       ]
     ],
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ff303fe2-92eb-452f-aec8-c6bcacc88c1c"
+      }
     }
   }
 }
