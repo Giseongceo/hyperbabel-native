@@ -1,7 +1,8 @@
 {
   "expo": {
     "name": "hyperbabel-native",
-    "slug": "hyeprbabel",
+    "slug": "hyperbabel",
+    "owner": "hyperbabel_ceo",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -74,7 +75,7 @@
     },
     "extra": {
       "eas": {
-        "projectId": "665c008d-70fe-4bf8-8ae2-407a03c82ee4"
+        "projectId": ""
       }
     }
   }
