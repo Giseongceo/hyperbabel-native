@@ -11,10 +11,10 @@
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.hyperbabel.native"
+      "bundleIdentifier": "com.hyperbabel.app"
     },
     "android": {
-      "package": "com.hyperbabel.native",
+      "package": "com.hyperbabel.app",
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
