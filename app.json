@@ -2,7 +2,7 @@
   "expo": {
     "name": "hyperbabel-native",
     "slug": "hyperbabel",
-    "owner": "hyperbabel_ceo",
+    "owner": "hyperbabel",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
