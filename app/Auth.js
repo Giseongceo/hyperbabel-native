@@ -35,9 +35,17 @@ export default function AuthScreen() {
   }
 
   async function signUpWithEmail() {
+    if (!email.trim() || !password.trim()) {
+      showAlert('입력 오류', '이메일과 비밀번호를 모두 입력해 주세요.');
+      return;
+    }
+    if (password.length < 6) {
+      showAlert('입력 오류', '비밀번호는 최소 6자 이상이어야 합니다.');
+      return;
+    }
     setLoading(true);
     const { error } = await supabase.auth.signUp({
-      email: email,
+      email: email.trim(),
       password: password,
     });
 
@@ -45,7 +53,7 @@ export default function AuthScreen() {
       console.log('SignUp Error:', error);
       showAlert('Sign Up Failed', `${error.message}\nRaw: ${JSON.stringify(error)}`);
     } else {
-      showAlert('Success', 'Please check your email to verify your account!');
+      showAlert('가입 완료', '이메일 인증 메일을 확인해 주세요! 인증 후 로그인하실 수 있습니다.');
     }
     setLoading(false);
   }
