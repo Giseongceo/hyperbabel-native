@@ -10,8 +10,8 @@ import { useStore } from '../store/useStore';
 import io from 'socket.io-client';
 import { supabase } from '../lib/supabase';
 
-// Connect using the external LAN IP so physical iPhones via Expo Go can reach the Node server!
-const SOCKET_URL = 'http://172.30.1.92:4000';
+// Production socket server deployed on Render
+const SOCKET_URL = 'https://hyperbabel-socket-server.onrender.com';
 const socket = io(SOCKET_URL, { autoConnect: false });
 
 export default function ChatScreen() {
