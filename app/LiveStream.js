@@ -77,13 +77,6 @@ export default function LiveStreamScreen() {
           <Text style={styles.endBtnText}>End Stream</Text>
         </TouchableOpacity>
       </View>
-
-      <TouchableOpacity 
-        style={styles.endBtn}
-        onPress={() => router.back()}
-      >
-        <Text style={styles.endBtnText}>End Stream</Text>
-      </TouchableOpacity>
     </View>
   );
 }

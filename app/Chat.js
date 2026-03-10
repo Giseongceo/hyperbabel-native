@@ -22,7 +22,7 @@ export default function ChatScreen() {
   const flatListRef = useRef();
 
   // Bring in Zustand global state
-  const { messages, userLang, receiveSocketMessage } = useStore();
+  const { messages, userLang, receiveSocketMessage, addMessage } = useStore();
 
   useEffect(() => {
     // 1. Fetch current logged-in user from Supabase to label the chat bubbles
@@ -58,6 +58,9 @@ export default function ChatScreen() {
       sender: senderEmail,
       ogLang: userLang
     };
+
+    // Optimistic update: show message immediately in local state
+    addMessage(inputText, senderEmail, userLang);
 
     // Shoot payload up to Node translator server
     socket.emit('send_message', msgData);
