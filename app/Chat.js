@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { 
   StyleSheet, Text, View, TouchableOpacity, 
   TextInput, KeyboardAvoidingView, FlatList, Platform, Keyboard
@@ -15,6 +16,7 @@ const socket = io(SOCKET_URL, { autoConnect: false });
 
 export default function ChatScreen() {
   const router = useRouter();
+  const insets = useSafeAreaInsets();
   const [inputText, setInputText] = useState('');
   const [currentUser, setCurrentUser] = useState(null);
   const flatListRef = useRef();
@@ -90,8 +92,8 @@ export default function ChatScreen() {
   return (
     <KeyboardAvoidingView 
       style={styles.container} 
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
-      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 20}
+      behavior={Platform.OS === 'ios' ? 'padding' : 'padding'}
+      keyboardVerticalOffset={Platform.OS === 'ios' ? 0 : 0}
     >
       <StatusBar style="light" />
       
@@ -124,7 +126,7 @@ export default function ChatScreen() {
       />
 
       {/* Input Area */}
-      <View style={styles.inputArea}>
+      <View style={[styles.inputArea, { paddingBottom: Math.max(insets.bottom + 10, 15) }]}>
         <TextInput 
           style={styles.input}
           placeholder={`Type in ${userLang}...`}
